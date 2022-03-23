@@ -1,0 +1,55 @@
+CREATE TABLE `acces`.`evid_angajati` (
+  `Marca` VARCHAR(10) NOT NULL,
+  `Nume,prenume` VARCHAR(50) NOT NULL,
+  `CNP` VARCHAR(13) NOT NULL,
+  `Divizie` VARCHAR(10) NOT NULL,
+  `Orar_acces` VARCHAR(9),
+  `Poza` VARBINARY(30) NOT NULL,
+  `Cod_secur` VARCHAR(15) NOT NULL,
+  `Nr_masina` VARCHAR(8) NULL,
+  `Acces` VARCHAR(11) NOT NULL,
+  PRIMARY KEY (`Marca`),
+  UNIQUE INDEX `Marca_UNIQUE` (`Marca` ASC),
+  UNIQUE INDEX `CNP_UNIQUE` (`CNP` ASC));
+
+CREATE TABLE `acces`.`admin` (
+  `Marca_adaugat` VARCHAR(10) NOT NULL,
+  `CNP` INT(13) NOT NULL,
+  `Marca` VARCHAR(10) NOT NULL,
+  `Date` DATE NOT NULL,
+  PRIMARY KEY (`Marca_adaugat`),
+  UNIQUE INDEX `Marca_adaugat_UNIQUE` (`Marca_adaugat` ASC),
+  UNIQUE INDEX `CNP_UNIQUE` (`CNP` ASC),
+  UNIQUE INDEX `Marca_UNIQUE` (`Marca` ASC),
+  CONSTRAINT `Admin_to_angajati`
+    FOREIGN KEY (`Marca_adaugat`)
+    REFERENCES `acces`.`evidenta_angajati` (`Marca`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+	
+CREATE TABLE `acces`USER` (
+  `Username` VARCHAR(10) NOT NULL,
+  `Password` VARCHAR(15) NOT NULL,
+  `Roles` JSON,
+  `Admin` VARCHAR(1),
+  PRIMARY KEY (`Username`),
+  UNIQUE INDEX `Username_UNIQUE` (`Username` ASC),
+  CONSTRAINT `Login_to_angajati`
+    FOREIGN KEY (`Username`)
+    REFERENCES `acces`.`evidenta_angajati` (`Marca`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+	
+CREATE TABLE `acces`.`pontaj` (
+  `Index` INT(3) NOT NULL AUTO_INCREMENT,
+  `Marca` VARCHAR(10) NOT NULL,
+  `Ora_intrare` TIME NOT NULL,
+  `Ora_iesire` TIME NOT NULL,
+  PRIMARY KEY (`Index`),
+  UNIQUE INDEX `Marca_UNIQUE` (`Marca` ASC),
+  UNIQUE INDEX `Index_UNIQUE` (`Index` ASC),
+  CONSTRAINT `Pontaj_to_angajati`
+    FOREIGN KEY (`Marca`)
+    REFERENCES `acces`.`evidenta_angajati` (`Marca`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);	

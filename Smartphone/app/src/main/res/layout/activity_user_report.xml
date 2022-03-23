@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    android:textDirection="locale"
+    tools:context=".UserReportActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:background="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnBack"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/gat" />
+
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="#FFFFFF"
+        android:drawableTop="?attr/actionModeCloseDrawable"
+        android:foregroundTint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <ListView
+        android:id="@+id/report_lisView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.589" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raport Activitate Angajat"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/report_lisView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+</androidx.constraintlayout.widget.ConstraintLayout>

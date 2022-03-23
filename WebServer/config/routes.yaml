@@ -1,0 +1,6 @@
+# index:
+#    path: /
+#    controller: App\Controller\AgController::index
+# index:
+#    path: /
+#    controller: App\Controller\MainController::index
